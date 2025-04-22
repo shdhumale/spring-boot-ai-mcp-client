@@ -9,7 +9,7 @@ spring:
     name: spring-boot-ai-mcp-client
   ai:
     openai:
-      api-key: "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"
+      api-key: "Your_Router_api_key"
       base-url: https://openrouter.ai/api
       chat:
         options:
