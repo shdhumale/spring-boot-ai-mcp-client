@@ -1,0 +1,30 @@
+logging:
+  level:
+    io:
+      modelcontextprotocol:
+        client: DEBUG
+        spec: DEBUG
+spring:
+  application:
+    name: spring-boot-ai-mcp-client
+  ai:
+    openai:
+      api-key: "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"
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: google/gemini-2.0-flash-exp:free
+    mcp:
+      client:
+        #stdio:
+         # servers-configuration: classpath:mcp-servers-config.json
+        stdio:
+          connections:
+            mongo-mcp-server:
+              command: java
+              args:
+                - "-jar"
+                - "C:\\STS-Workspace\\spring-boot-ai-mongo-mcp-server\\target\\spring-boot-ai-mongo-mcp-server-0.0.1-SNAPSHOT.jar"
+              env:
+                "MONGO_HOST": "localhost"
+                "MONGO_PORT": "27017"            
